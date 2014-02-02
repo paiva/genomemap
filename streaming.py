@@ -14,8 +14,13 @@ class listener(StreamListener):
     def on_data(self, data):
 	try:
         	#print data
-		saveFile = open("twitDB.csv", "a")
-		saveFile.write(data)
+
+		tweet = data.split(',"text":"')[1].split('","source')[0]
+		
+		# Using ":::" to separate time and tweets
+		saveThis = str(time.time() + ":::" + tweet)
+		saveFile = open("twitDB2.csv", "a")
+		saveFile.write(saveThis)
 		saveFile.write("\n")
 		saveFile.close()
         	return True
