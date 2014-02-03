@@ -21,7 +21,9 @@ class listener(StreamListener):
             hashtags = data.split('"hashtags":[')[1].split('],"symbols')[0]   
 
 	    # Tweet composed of date, author, location, text, and hashtags. 	
-            saveThis = str("{" + "Date:" + '"' + date + '",' + "Author:" + '"@' + author + '",' + "Location:" + '"' + location + '",'+ "Text:" + '[' + text + '],' + "Hashtags:" + "[" + hashtags + "]" + "},")
+            saveThis = str("{" + "Date:" + '"' + date + '",' + "Author:" + '"@' + author + '",' 
+                           + "Location:" + '"' + location + '",'+ "Text:" + '[' + text + '],' 
+                           + "Hashtags:" + "[" + hashtags + "]" + "},")
  	
 	    # Saves into a CVS file named "tweeter"	 	
             saveFile = open("tweeter.csv", "a")
