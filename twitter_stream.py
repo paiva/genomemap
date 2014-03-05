@@ -1,7 +1,7 @@
 """
 Class that attaches to the Twitter Streaming API
 """
-__author__ = 'Derek Ruths (druths@networkdynamics.org)'
+__author__ = 'Santiago Paiva'
 
 #import requests
 import json, sys
@@ -9,9 +9,8 @@ import json, sys
 FILTER_URL = "https://stream.twitter.com/1/statuses/filter.json"
 SAMPLE_URL = "https://stream.twitter.com/1/statuses/sample.json"
 
-username= "stronnics" # should be a string
-password = "S03752455666" # should be a string
-tract_terms = [['#Oscars'],['#Oscars2014']]
+username= None # should be a string
+password = None # should be a string
 
 TIMEOUT = 60*60*3
 
