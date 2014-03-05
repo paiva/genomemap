@@ -1,7 +1,7 @@
 """
 Class that attaches to the Twitter Streaming API
 """
-__author__ = 'Santiago Paiva'
+__author__ = 'Network Dynamics Lab, McGill University'
 
 #import requests
 import json, sys
