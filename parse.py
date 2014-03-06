@@ -1,3 +1,7 @@
+"""
+    This is a perser from .txt to JSON file
+"""
+
 import json
 
 with open("filename.txt", "r") as f:
