@@ -1,20 +1,24 @@
-import csv
 import json
 
-csvfile  = open('superbowl-2.csv', "r")
-jsonfile  = open('out.json', "w")
-fieldnames = ("Date", "Author", "Location", "Text", "Hashtags")
+with open("filename.txt", "r") as f:
+    with open("out.json", "w") as outfile:
+        for tweet in f:
 
-reader = csv.DictReader(csvfile,fieldnames)
+            date = tweet[7:tweet.find('",Author:')]
+            author = tweet[tweet.find('",Author:"')+10:tweet.find('",Location:"')]
+            location = tweet[tweet.find('",Location:"')+12:tweet.find('",Text:[')]
+            text = tweet[tweet.find(',Text:[')+7:tweet.find('],Hashtags:[')]
+            hashtags = tweet[tweet.find(',Hashtags:[')+11:tweet.find(']},')] 
 
-for row in reader:
+            outfile.write(json.dumps({"Date" : date,
+                       "Author": author,
+                       "Location": location,
+                       "Text": text,
+                       "Hashtags" : hashtags}, indent=4))
+            outfile.write(',')
+            
+outfile.close()
+f.close()
 
-    json.dumps(row,jsonfile,indent=4)
-    jsonfile.write('\n')
-
-print(json.dumps(row,jsonfile,indent=4))
-
-csvfile.close()
-jsonfile.close()
 
 
