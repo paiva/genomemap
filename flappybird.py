@@ -1,3 +1,8 @@
+"""
+    This is the Flappy Bird script for sentiment analysis
+    Version 1.0
+"""
+
 import json
 
 positive_keys = ['yes', '#yes', 'Yes', '#Yes','YES','#YES','Thank', '#Thank'
